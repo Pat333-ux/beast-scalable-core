@@ -1,0 +1,20 @@
+{
+  "name": "beast-scalable-core",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "docker:up": "docker-compose -f infra/docker/docker-compose.yml up --build -d",
+    "docker:down": "docker-compose -f infra/docker/docker-compose.yml down",
+    "test:load": "k6 run infra/load-tests/stress-test.js"
+  },
+  "devDependencies": {
+    "turbo": "^1.10.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
